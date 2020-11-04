@@ -35,16 +35,29 @@ namespace Math
                     case 1:
                         Cabecalho(Titulos.SequenciaFibonacci);
                         Write("Digite o limite para a sequência: ");
+
                         var sequencia = OperacoesMatematicas.SequenciaFibonacci(int.Parse(ReadLine()));
 
                         foreach (var item in sequencia)
                             Write(item.ToString() + " ");
 
                         break;
+
+                    case 2:
+                        Cabecalho(Titulos.NumeroFatorial);
+                        Write("Digite um número para o fatorial: ");
+                        var numero = int.Parse(ReadLine());
+
+                        var fatorial = OperacoesMatematicas.NumeroFatorial(numero);
+
+                        Write($"{numero}! = {fatorial}");
+
+                        break;
+
                     default:
                         WriteLine("Opção inexistente!");
                         break;
-                }                
+                }
             }
             else
             {

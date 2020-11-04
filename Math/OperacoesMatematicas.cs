@@ -15,5 +15,13 @@ namespace Math
 
             return fibonacci;
         }
+
+        public static int NumeroFatorial(int numero)
+        {
+            if (numero == 1)
+                return 1;
+            
+            return numero * NumeroFatorial(numero - 1);
+        }
     }
 }
