@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Math {
+namespace Matematica {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Math {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Math.Titulos", typeof(Titulos).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Matematica.Titulos", typeof(Titulos).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -81,9 +81,9 @@ namespace Math {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Verificar se um número é um número de Armstrong.
         /// </summary>
-        internal static string NumeroArmostrong {
+        internal static string NumeroArmstrong {
             get {
-                return ResourceManager.GetString("NumeroArmostrong", resourceCulture);
+                return ResourceManager.GetString("NumeroArmstrong", resourceCulture);
             }
         }
         

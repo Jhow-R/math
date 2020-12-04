@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Math
+namespace Matematica
 {
     static class OperacoesMatematicas
     {
@@ -21,7 +21,7 @@ namespace Math
         {
             if (numero == 1)
                 return 1;
-            
+
             return numero * NumeroFatorial(numero - 1);
         }
 
@@ -44,6 +44,19 @@ namespace Math
                     yield return i;
                 }
             }
+        }
+
+        public static bool VerificarNumeroArmstrong(int numeroArmstrong)
+        {
+            int soma = 0 , resto;
+
+            for (int i = numeroArmstrong; i > 0; i = i / 10)
+            {
+                resto = i % 10;
+                soma += (int)Math.Pow(resto, 3);
+            }
+
+            return soma == numeroArmstrong;
         }
     }
 }

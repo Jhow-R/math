@@ -123,7 +123,7 @@
   <data name="MMC" xml:space="preserve">
     <value>Calcular o MMC entre dois números</value>
   </data>
-  <data name="NumeroArmostrong" xml:space="preserve">
+  <data name="NumeroArmstrong" xml:space="preserve">
     <value>Verificar se um número é um número de Armstrong</value>
   </data>
   <data name="NumeroFatores" xml:space="preserve">

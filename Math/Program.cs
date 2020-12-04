@@ -2,7 +2,7 @@
 
 using static System.Console;
 
-namespace Math
+namespace Matematica
 {
     static class Program
     {
@@ -20,7 +20,7 @@ namespace Math
                         + Environment.NewLine + $" 2. {Titulos.NumeroFatorial}"
                         + Environment.NewLine + $" 3. {Titulos.NumerosSoma}"
                         + Environment.NewLine + $" 4. {Titulos.NumeroFatores}"
-                        + Environment.NewLine + $" 5. {Titulos.NumeroArmostrong}"
+                        + Environment.NewLine + $" 5. {Titulos.NumeroArmstrong}"
                         + Environment.NewLine + $" 6. {Titulos.NumeroPerfeito}"
                         + Environment.NewLine + $" 7. {Titulos.MDC}"
                         + Environment.NewLine + $" 8. {Titulos.MMC}"
@@ -79,6 +79,19 @@ namespace Math
 
                         foreach (var item in OperacoesMatematicas.ObterFatoresNumero(numeroFator))
                             Write($"{ item.ToString()} {WhiteSpace}");
+
+                        break;
+
+                    case 5:
+                        Cabecalho(Titulos.NumeroArmstrong);
+                        Write("Digite o número: ");
+                        int.TryParse(ReadLine(), out int numeroArmstrong);
+
+                        bool isArmstrongNumber = OperacoesMatematicas.VerificarNumeroArmstrong(numeroArmstrong);
+                            
+                        Write(isArmstrongNumber?
+                            "É um número de Armstrong." :
+                            "Não é um número de Armstrong.");
 
                         break;
 
