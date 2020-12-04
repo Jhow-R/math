@@ -34,5 +34,16 @@ namespace Math
 
             return soma;
         }
+
+        public static IEnumerable<int> ObterFatoresNumero(int numeroFator)
+        {
+            for (int i = 1; i <= numeroFator; i++)
+            {
+                if (numeroFator % i == 0)
+                {
+                    yield return i;
+                }
+            }
+        }
     }
 }

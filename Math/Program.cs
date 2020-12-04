@@ -71,6 +71,20 @@ namespace Math
                         Write(soma);
 
                         break;
+
+                    case 4:
+                        Cabecalho(Titulos.NumeroFatores);
+                        Write("Digite o número: ");
+                        int.TryParse(ReadLine(), out int numeroFator);
+
+                        foreach (var item in OperacoesMatematicas.ObterFatoresNumero(numeroFator))
+                            Write($"{ item.ToString()} {WhiteSpace}");
+
+                        break;
+
+                    default:
+                        WriteLine("Opção inexistente!");
+                        break;
                 }
             }
             else
