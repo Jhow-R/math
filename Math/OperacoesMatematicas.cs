@@ -6,7 +6,7 @@ namespace Matematica
 {
     static class OperacoesMatematicas
     {
-        public static IEnumerable<int> SequenciaFibonacci(int limite)
+        internal static IEnumerable<int> SequenciaFibonacci(int limite)
         {
             IList<int> fibonacci = new List<int>();
 
@@ -17,7 +17,7 @@ namespace Matematica
             return fibonacci;
         }
 
-        public static int NumeroFatorial(int numero)
+        internal static int NumeroFatorial(int numero)
         {
             if (numero == 1)
                 return 1;
@@ -25,7 +25,7 @@ namespace Matematica
             return numero * NumeroFatorial(numero - 1);
         }
 
-        public static int SomarNumeros(int enesimo)
+        internal static int SomarNumeros(int enesimo)
         {
             int soma = default(int);
 
@@ -35,7 +35,7 @@ namespace Matematica
             return soma;
         }
 
-        public static IEnumerable<int> ObterFatoresNumero(int numeroFator)
+        internal static IEnumerable<int> ObterFatoresNumero(int numeroFator)
         {
             for (int i = 1; i <= numeroFator; i++)
             {
@@ -46,9 +46,9 @@ namespace Matematica
             }
         }
 
-        public static bool VerificarNumeroArmstrong(int numeroArmstrong)
+        internal static bool VerificarNumeroArmstrong(int numeroArmstrong)
         {
-            int soma = 0 , resto;
+            int soma = 0, resto;
 
             for (int i = numeroArmstrong; i > 0; i = i / 10)
             {
@@ -57,6 +57,19 @@ namespace Matematica
             }
 
             return soma == numeroArmstrong;
+        }
+
+        internal static bool VerificarNumeroPerfeito(int numeroPerfeito)
+        {
+            int soma = 0;
+
+            for (int i = 1; i < numeroPerfeito; i++)
+            {
+                if (numeroPerfeito % i == 0)
+                    soma = soma + i;
+            }
+
+            return soma == numeroPerfeito;
         }
     }
 }

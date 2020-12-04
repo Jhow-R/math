@@ -95,6 +95,19 @@ namespace Matematica
 
                         break;
 
+                    case 6:
+                        Cabecalho(Titulos.NumeroArmstrong);
+                        Write("Digite o número: ");
+                        int.TryParse(ReadLine(), out int numeroPerfeito);
+
+                        bool isPerfectNumber = OperacoesMatematicas.VerificarNumeroPerfeito(numeroPerfeito);
+                            
+                        Write(isPerfectNumber ?
+                            "É um número de perfeito." :
+                            "Não é um número perfeito.");
+
+                        break;
+
                     default:
                         WriteLine("Opção inexistente!");
                         break;
