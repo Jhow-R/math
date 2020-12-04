@@ -142,6 +142,15 @@ namespace Math {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sair.
+        /// </summary>
+        internal static string Sair {
+            get {
+                return ResourceManager.GetString("Sair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Gerar a Sequência de Fibonacci.
         /// </summary>
         internal static string SequenciaFibonacci {

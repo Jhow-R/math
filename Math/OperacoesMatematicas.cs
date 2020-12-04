@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Math
@@ -22,6 +23,16 @@ namespace Math
                 return 1;
             
             return numero * NumeroFatorial(numero - 1);
+        }
+
+        public static int SomarNumeros(int enesimo)
+        {
+            int soma = default(int);
+
+            for (int i = 0; i <= enesimo; i++)
+                soma += i;
+
+            return soma;
         }
     }
 }

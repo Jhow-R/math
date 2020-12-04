@@ -144,6 +144,9 @@
   <data name="NumerosSoma" xml:space="preserve">
     <value>Gerar a Soma de N números</value>
   </data>
+  <data name="Sair" xml:space="preserve">
+    <value>Sair</value>
+  </data>
   <data name="SequenciaFibonacci" xml:space="preserve">
     <value>Gerar a Sequência de Fibonacci</value>
   </data>

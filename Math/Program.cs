@@ -6,6 +6,8 @@ namespace Math
 {
     static class Program
     {
+        const string WhiteSpace = " ";
+
         static void Main(string[] args)
         {
             Menu();
@@ -16,7 +18,7 @@ namespace Math
             Clear();
             WriteLine($"\n 1. {Titulos.SequenciaFibonacci}"
                         + Environment.NewLine + $" 2. {Titulos.NumeroFatorial}"
-                        + Environment.NewLine + $" 3. {Titulos.NumerosSoma}s"
+                        + Environment.NewLine + $" 3. {Titulos.NumerosSoma}"
                         + Environment.NewLine + $" 4. {Titulos.NumeroFatores}"
                         + Environment.NewLine + $" 5. {Titulos.NumeroArmostrong}"
                         + Environment.NewLine + $" 6. {Titulos.NumeroPerfeito}"
@@ -24,6 +26,7 @@ namespace Math
                         + Environment.NewLine + $" 8. {Titulos.MMC}"
                         + Environment.NewLine + $" 9. {Titulos.NumeroPrimo}"
                         + Environment.NewLine + $" 10. {Titulos.NumeroRaizCubica}"
+                        + Environment.NewLine + $" 0. {Titulos.Sair}"
                         + Environment.NewLine);
 
             var resposta = ReadLine();
@@ -32,6 +35,10 @@ namespace Math
             {
                 switch (escolha)
                 {
+                    case 0:
+                        Environment.Exit(0);
+                        break;
+
                     case 1:
                         Cabecalho(Titulos.SequenciaFibonacci);
                         Write("Digite o limite para a sequência: ");
@@ -39,23 +46,30 @@ namespace Math
                         var sequencia = OperacoesMatematicas.SequenciaFibonacci(int.Parse(ReadLine()));
 
                         foreach (var item in sequencia)
-                            Write(item.ToString() + " ");
+                            Write($"{ item.ToString()} {WhiteSpace}");
 
                         break;
 
                     case 2:
                         Cabecalho(Titulos.NumeroFatorial);
                         Write("Digite um número para o fatorial: ");
-                        var numero = int.Parse(ReadLine());
+                        int.TryParse(ReadLine(), out int numeroFatorial);
 
-                        var fatorial = OperacoesMatematicas.NumeroFatorial(numero);
+                        int fatorial = OperacoesMatematicas.NumeroFatorial(numeroFatorial);
 
-                        Write($"{numero}! = {fatorial}");
+                        Write($"{numeroFatorial}! = {fatorial}");
 
                         break;
 
-                    default:
-                        WriteLine("Opção inexistente!");
+                    case 3:
+                        Cabecalho(Titulos.NumerosSoma);
+                        Write("Digite o enésimo número: ");
+                        int.TryParse(ReadLine(), out int enesimo);
+
+                        int soma = OperacoesMatematicas.SomarNumeros(enesimo);
+
+                        Write(soma);
+
                         break;
                 }
             }
