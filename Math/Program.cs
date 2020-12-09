@@ -121,8 +121,19 @@ namespace Matematica
 
                         var mmc = OperacoesMatematicas.CalcularMenorMultiploComum(mmcPrimeiroNumero, mmcSegundoNumero);
 
-                        Write($"O MMC de ({mmcPrimeiroNumero}, {mmcSegundoNumero}) = {mmc}");
-                        
+                        Write($"O MMC de ({mmcPrimeiroNumero}, {mmcSegundoNumero}) = {mmc}");                       
+                        break;
+
+                    case 9:
+                        Cabecalho(Titulos.NumeroPrimo);
+                        Write("Digite o número: ");
+                        int.TryParse(ReadLine(), out int numeroPrimo);
+
+                        bool isPrimeNumber = OperacoesMatematicas.VerificarNumeroPrimo(numeroPrimo);
+
+                        Write(isPrimeNumber ?
+                            "É um número primo." :
+                            "Não é um número primo.");
                         break;
 
                     default:

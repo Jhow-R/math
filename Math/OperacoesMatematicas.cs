@@ -98,5 +98,16 @@ namespace Matematica
             }
             return (x * y) / primeiroNumero;
         }
+
+        internal static bool VerificarNumeroPrimo(int numeroPrimo)
+        {
+            int k = 0;
+            for (int i = 1; i <= numeroPrimo; i++)
+            {
+                if (numeroPrimo % i == 0)
+                    k++;
+            }
+            return k == 2;
+        }
     }
 }
