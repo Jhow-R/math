@@ -10,7 +10,7 @@ namespace Matematica
 
         static void Main(string[] args)
         {
-            Menu:
+        Menu:
             Clear();
             WriteLine($"\n 1. {Titulos.SequenciaFibonacci}"
                         + Environment.NewLine + $" 2. {Titulos.NumeroFatorial}"
@@ -43,7 +43,6 @@ namespace Matematica
 
                         foreach (var item in sequencia)
                             Write($"{ item.ToString()} {WhiteSpace}");
-
                         break;
 
                     case 2:
@@ -54,7 +53,6 @@ namespace Matematica
                         var fatorial = OperacoesMatematicas.ObterNumeroFatorial(numeroFatorial);
 
                         Write($"{numeroFatorial}! = {fatorial}");
-
                         break;
 
                     case 3:
@@ -65,7 +63,6 @@ namespace Matematica
                         var soma = OperacoesMatematicas.SomarNumeros(enesimo);
 
                         Write(soma);
-
                         break;
 
                     case 4:
@@ -75,7 +72,6 @@ namespace Matematica
 
                         foreach (var item in OperacoesMatematicas.ObterFatoresNumero(numeroFator))
                             Write($"{ item.ToString()} {WhiteSpace}");
-
                         break;
 
                     case 5:
@@ -88,7 +84,6 @@ namespace Matematica
                         Write(isArmstrongNumber ?
                             "É um número de Armstrong." :
                             "Não é um número de Armstrong.");
-
                         break;
 
                     case 6:
@@ -114,7 +109,20 @@ namespace Matematica
                         var mdc = OperacoesMatematicas.CalcularMaiorDivisorComum(mdcPrimeiroNumero, mdcSegundoNumero);
 
                         Write($"O MDC de ({mdcPrimeiroNumero}, {mdcSegundoNumero}) = {mdc}");
+                        break;
 
+                    case 8:
+                        Cabecalho(Titulos.MMC);
+                        Write("Digite o primeiro número: ");
+                        int.TryParse(ReadLine(), out int mmcPrimeiroNumero);
+
+                        Write("Digite o segundo número: ");
+                        int.TryParse(ReadLine(), out int mmcSegundoNumero);
+
+                        var mmc = OperacoesMatematicas.CalcularMenorMultiploComum(mmcPrimeiroNumero, mmcSegundoNumero);
+
+                        Write($"O MMC de ({mmcPrimeiroNumero}, {mmcSegundoNumero}) = {mmc}");
+                        
                         break;
 
                     default:

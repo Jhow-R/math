@@ -83,5 +83,20 @@ namespace Matematica
             }
             return primeiroNumero;
         }
+
+        internal static int CalcularMenorMultiploComum(int primeiroNumero, int segundoNumero)
+        {
+            int x = primeiroNumero;
+            int y = segundoNumero;
+
+            while (primeiroNumero != segundoNumero)
+            {
+                if (primeiroNumero > segundoNumero)
+                    primeiroNumero -= segundoNumero;
+                else
+                    segundoNumero -= primeiroNumero;
+            }
+            return (x * y) / primeiroNumero;
+        }
     }
 }
