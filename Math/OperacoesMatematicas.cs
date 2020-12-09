@@ -6,7 +6,7 @@ namespace Matematica
 {
     static class OperacoesMatematicas
     {
-        internal static IEnumerable<int> SequenciaFibonacci(int limite)
+        internal static IEnumerable<int> ObterSequenciaFibonacci(int limite)
         {
             IList<int> fibonacci = new List<int>();
 
@@ -17,12 +17,12 @@ namespace Matematica
             return fibonacci;
         }
 
-        internal static int NumeroFatorial(int numero)
+        internal static int ObterNumeroFatorial(int numero)
         {
             if (numero == 1)
                 return 1;
 
-            return numero * NumeroFatorial(numero - 1);
+            return numero * ObterNumeroFatorial(numero - 1);
         }
 
         internal static int SomarNumeros(int enesimo)
@@ -70,6 +70,18 @@ namespace Matematica
             }
 
             return soma == numeroPerfeito;
+        }
+
+        internal static int CalcularMaiorDivisorComum(int primeiroNumero, int segundoNumero)
+        {
+            int resto;
+            while (segundoNumero != 0)
+            {
+                resto = primeiroNumero % segundoNumero;
+                primeiroNumero = segundoNumero;
+                segundoNumero = resto;
+            }
+            return primeiroNumero;
         }
     }
 }

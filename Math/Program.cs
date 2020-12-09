@@ -10,11 +10,7 @@ namespace Matematica
 
         static void Main(string[] args)
         {
-            Menu();
-        }
-
-        private static void Menu()
-        {
+            Menu:
             Clear();
             WriteLine($"\n 1. {Titulos.SequenciaFibonacci}"
                         + Environment.NewLine + $" 2. {Titulos.NumeroFatorial}"
@@ -43,7 +39,7 @@ namespace Matematica
                         Cabecalho(Titulos.SequenciaFibonacci);
                         Write("Digite o limite para a sequência: ");
 
-                        var sequencia = OperacoesMatematicas.SequenciaFibonacci(int.Parse(ReadLine()));
+                        var sequencia = OperacoesMatematicas.ObterSequenciaFibonacci(int.Parse(ReadLine()));
 
                         foreach (var item in sequencia)
                             Write($"{ item.ToString()} {WhiteSpace}");
@@ -55,7 +51,7 @@ namespace Matematica
                         Write("Digite um número para o fatorial: ");
                         int.TryParse(ReadLine(), out int numeroFatorial);
 
-                        int fatorial = OperacoesMatematicas.NumeroFatorial(numeroFatorial);
+                        var fatorial = OperacoesMatematicas.ObterNumeroFatorial(numeroFatorial);
 
                         Write($"{numeroFatorial}! = {fatorial}");
 
@@ -66,7 +62,7 @@ namespace Matematica
                         Write("Digite o enésimo número: ");
                         int.TryParse(ReadLine(), out int enesimo);
 
-                        int soma = OperacoesMatematicas.SomarNumeros(enesimo);
+                        var soma = OperacoesMatematicas.SomarNumeros(enesimo);
 
                         Write(soma);
 
@@ -88,23 +84,36 @@ namespace Matematica
                         int.TryParse(ReadLine(), out int numeroArmstrong);
 
                         bool isArmstrongNumber = OperacoesMatematicas.VerificarNumeroArmstrong(numeroArmstrong);
-                            
-                        Write(isArmstrongNumber?
+
+                        Write(isArmstrongNumber ?
                             "É um número de Armstrong." :
                             "Não é um número de Armstrong.");
 
                         break;
 
                     case 6:
-                        Cabecalho(Titulos.NumeroArmstrong);
+                        Cabecalho(Titulos.NumeroPerfeito);
                         Write("Digite o número: ");
                         int.TryParse(ReadLine(), out int numeroPerfeito);
 
                         bool isPerfectNumber = OperacoesMatematicas.VerificarNumeroPerfeito(numeroPerfeito);
-                            
+
                         Write(isPerfectNumber ?
                             "É um número de perfeito." :
                             "Não é um número perfeito.");
+                        break;
+
+                    case 7:
+                        Cabecalho(Titulos.MDC);
+                        Write("Digite o primeiro número: ");
+                        int.TryParse(ReadLine(), out int mdcPrimeiroNumero);
+
+                        Write("Digite o segundo número: ");
+                        int.TryParse(ReadLine(), out int mdcSegundoNumero);
+
+                        var mdc = OperacoesMatematicas.CalcularMaiorDivisorComum(mdcPrimeiroNumero, mdcSegundoNumero);
+
+                        Write($"O MDC de ({mdcPrimeiroNumero}, {mdcSegundoNumero}) = {mdc}");
 
                         break;
 
@@ -122,7 +131,8 @@ namespace Matematica
             Write("Pressione qualquer tecla para retornar ao menu.");
 
             ReadKey();
-            Menu();
+
+            goto Menu;
         }
 
         private static void Cabecalho(string titulo)
