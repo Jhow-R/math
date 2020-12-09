@@ -109,5 +109,7 @@ namespace Matematica
             }
             return k == 2;
         }
+
+        internal static double CalcularRaizCubica(int numeroRaizCubica) => Math.Pow(numeroRaizCubica, (double) 1 / 3);
     }
 }

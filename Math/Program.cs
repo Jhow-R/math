@@ -136,6 +136,16 @@ namespace Matematica
                             "Não é um número primo.");
                         break;
 
+                    case 10:
+                        Cabecalho(Titulos.NumeroRaizCubica);
+                        Write("Digite o número: ");
+                        int.TryParse(ReadLine(), out int numeroRaizCubica);
+
+                        var raizCubica = OperacoesMatematicas.CalcularRaizCubica(numeroRaizCubica);
+                        
+                        Write($"³√{numeroRaizCubica} = {raizCubica}");
+                        break;
+
                     default:
                         WriteLine("Opção inexistente!");
                         break;
